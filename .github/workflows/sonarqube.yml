@@ -1,0 +1,51 @@
+name: SonarQube
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      BUILD_WRAPPER_OUT_DIR: build_wrapper_output_directory
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential libncurses-dev gettext autopoint pkg-config
+
+      - name: Install build-wrapper
+        uses: SonarSource/sonarqube-scan-action/install-build-wrapper@v8
+
+      - name: Stamp autotools outputs
+        working-directory: minicom-2.10
+        run: |
+          touch configure.ac; sleep 1
+          touch aclocal.m4;   sleep 1
+          touch configure config.h.in; sleep 1
+          find . -name 'Makefile.in' -exec touch {} +
+
+      - name: Configure
+        working-directory: minicom-2.10
+        run: ./configure --disable-nls
+
+      - name: Compile under build-wrapper
+        run: |
+          build-wrapper-linux-x86-64 \
+            --out-dir "$GITHUB_WORKSPACE/$BUILD_WRAPPER_OUT_DIR" \
+            make -C minicom-2.10 -j"$(nproc)"
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v8
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            --define sonar.cfamily.build-wrapper-output=${{ env.BUILD_WRAPPER_OUT_DIR }}

@@ -1,0 +1,9 @@
+*.o
+*.a
+semgrep.json
+build_wrapper_output_directory/
+.scannerwork/
+minicom-2.10/config.status
+minicom-2.10/config.log
+minicom-2.10/Makefile
+minicom-2.10/src/minicom
