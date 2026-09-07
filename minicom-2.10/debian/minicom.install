@@ -1,0 +1,2 @@
+debian/minicom.desktop /usr/share/applications
+debian/minirc.nullmodem /etc/minicom

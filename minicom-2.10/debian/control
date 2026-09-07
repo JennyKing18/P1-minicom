@@ -1,0 +1,16 @@
+Source: minicom
+Section: comm
+Priority: optional
+Maintainer: Martin A. Godisch <godisch@debian.org>
+Uploaders: Jordi Mallach <jordi@debian.org>
+Build-Depends: debhelper-compat (= 13), gettext, libncurses-dev, pkgconf
+Standards-Version: 4.7.1
+Homepage: https://salsa.debian.org/minicom-team/minicom
+
+Package: minicom
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Recommends: lrzsz
+Description: Friendly menu driven serial communication program
+ Minicom is a clone of the MS-DOS "Telix" communication program. It emulates
+ ANSI and VT102 terminals, has a dialing directory and auto zmodem download.

@@ -1,0 +1,22 @@
+--- minicom-2.8.orig/src/minicom.c
++++ minicom-2.8/src/minicom.c
+@@ -1322,9 +1322,6 @@ int main(int argc, char **argv)
+       switch(c) {
+         case 'v':
+           printf(_("%s version %s"), PACKAGE, VERSION);
+-#ifdef __DATE__
+-          printf(_(" (compiled %s)"), __DATE__);
+-#endif
+           printf("\n");
+           printf(_("Copyright (C) Miquel van Smoorenburg.\n\n"));
+           printf(_("This program is free software; you can redistribute it and/or\n"
+@@ -1658,9 +1655,6 @@ int main(int argc, char **argv)
+ 
+   mc_wprintf(us, "\n%s %s\r\n", _("Welcome to minicom"), VERSION);
+   mc_wprintf(us, "\n%s: %s\r\n", _("OPTIONS"), option_string);
+-#if defined (__DATE__) && defined (__TIME__)
+-  mc_wprintf(us, "%s %s, %s.\r\n",_("Compiled on"), __DATE__,__TIME__);
+-#endif
+   {
+     struct stat st;
+     char port_date[20] = "";
