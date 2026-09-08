@@ -1,0 +1,4440 @@
+{
+  "version": "1.176.1",
+  "results": [
+    {
+      "check_id": "cpp.lang.security.system-command.dont-call-system.dont-call-system",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 976,
+        "col": 11,
+        "offset": 24090
+      },
+      "end": {
+        "line": 976,
+        "col": 26,
+        "offset": 24105
+      },
+      "extra": {
+        "metavars": {
+          "$SYSTEM": {
+            "start": {
+              "line": 976,
+              "col": 11,
+              "offset": 24090
+            },
+            "end": {
+              "line": 976,
+              "col": 26,
+              "offset": 24105
+            },
+            "abstract_content": "system(copycmd)"
+          }
+        },
+        "message": "Don't call `system`. It's a high-level wrapper that allows for stacking multiple commands. Always prefer a more restrictive API such as calling `execve` from the `exec` family.",
+        "metadata": {
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "category": "security",
+          "subcategory": [
+            "audit"
+          ],
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "OS Command Injection",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "references": [
+            "https://owasp.org/Top10/2025/A05_2025-Injection/",
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "release": "ga",
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Command Injection"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.system-command.dont-call-system.dont-call-system",
+          "shortlink": "https://sg.run/BYWWx",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114895,
+              "rule_id": "6JUv88x",
+              "rv_id": 1414077,
+              "url": "https://semgrep.dev/playground/r/ZRTDvWq/cpp.lang.security.system-command.dont-call-system.dont-call-system",
+              "version_id": "ZRTDvWq"
+            }
+          }
+        },
+        "severity": "INFO",
+        "fingerprint": "6fba6902e3c4ed808448121ba603eda0a08efe648c046107914444b4a30a55d83121bb70f2bc9aa2cbb500168377adaf25c1d1f5dcab9a6d775a6b967b94d2d6_0",
+        "lines": "      if (system(copycmd) == 0) {",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.system-command.dont-call-system.dont-call-system",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 976,
+        "col": 11,
+        "offset": 24090
+      },
+      "end": {
+        "line": 976,
+        "col": 31,
+        "offset": 24110
+      },
+      "extra": {
+        "metavars": {
+          "$SYSTEM": {
+            "start": {
+              "line": 976,
+              "col": 11,
+              "offset": 24090
+            },
+            "end": {
+              "line": 976,
+              "col": 31,
+              "offset": 24110
+            },
+            "abstract_content": "system(copycmd)==0"
+          }
+        },
+        "message": "Don't call `system`. It's a high-level wrapper that allows for stacking multiple commands. Always prefer a more restrictive API such as calling `execve` from the `exec` family.",
+        "metadata": {
+          "likelihood": "MEDIUM",
+          "impact": "HIGH",
+          "confidence": "HIGH",
+          "category": "security",
+          "subcategory": [
+            "audit"
+          ],
+          "cwe": [
+            "CWE-78: Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection')"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "OS Command Injection",
+          "owasp": [
+            "A01:2017 - Injection",
+            "A03:2021 - Injection",
+            "A05:2025 - Injection"
+          ],
+          "references": [
+            "https://owasp.org/Top10/2025/A05_2025-Injection/",
+            "https://owasp.org/Top10/A03_2021-Injection"
+          ],
+          "release": "ga",
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Command Injection"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.system-command.dont-call-system.dont-call-system",
+          "shortlink": "https://sg.run/BYWWx",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114895,
+              "rule_id": "6JUv88x",
+              "rv_id": 1414077,
+              "url": "https://semgrep.dev/playground/r/ZRTDvWq/cpp.lang.security.system-command.dont-call-system.dont-call-system",
+              "version_id": "ZRTDvWq"
+            }
+          }
+        },
+        "severity": "INFO",
+        "fingerprint": "a768a8bb3dd2a5fe5c595ed7c968c94c8c7c218deeac9f915ea073bec4311b111be272ff8cac4884b982d5cef69ba4dd12cbfdde5241bd93341583db0f72d019_0",
+        "lines": "      if (system(copycmd) == 0) {",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "c.lang.security.insecure-use-strtok-fn.insecure-use-strtok-fn",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1456,
+        "col": 7,
+        "offset": 37364
+      },
+      "end": {
+        "line": 1456,
+        "col": 25,
+        "offset": 37382
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Avoid using 'strtok()'. This function directly modifies the first argument buffer, permanently erasing the delimiter character. Use 'strtok_r()' instead.",
+        "metadata": {
+          "cwe": [
+            "CWE-676: Use of Potentially Dangerous Function"
+          ],
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/STR06-C.+Do+not+assume+that+strtok%28%29+leaves+the+parse+string+unchanged",
+            "https://man7.org/linux/man-pages/man3/strtok.3.html#BUGS",
+            "https://stackoverflow.com/a/40335556"
+          ],
+          "category": "security",
+          "technology": [
+            "c"
+          ],
+          "confidence": "LOW",
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Dangerous Method or Function"
+          ],
+          "source": "https://semgrep.dev/r/c.lang.security.insecure-use-strtok-fn.insecure-use-strtok-fn",
+          "shortlink": "https://sg.run/LwqG",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 8839,
+              "rule_id": "WAUo5v",
+              "rv_id": 1028278,
+              "url": "https://semgrep.dev/playground/r/qkTx1oq/c.lang.security.insecure-use-strtok-fn.insecure-use-strtok-fn",
+              "version_id": "qkTx1oq"
+            }
+          }
+        },
+        "severity": "WARNING",
+        "fingerprint": "dec09174899be6417950fd8b9b3ef23f21d51f092aa4cf459214219a883e70cec316469f03d45e793c07e0000391a55d7ff49be896597f6b825e4f943f5cd16b_0",
+        "lines": "  s = strtok(entry,\",;\");",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "c.lang.security.insecure-use-strtok-fn.insecure-use-strtok-fn",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1473,
+        "col": 9,
+        "offset": 37788
+      },
+      "end": {
+        "line": 1473,
+        "col": 26,
+        "offset": 37805
+      },
+      "extra": {
+        "metavars": {},
+        "message": "Avoid using 'strtok()'. This function directly modifies the first argument buffer, permanently erasing the delimiter character. Use 'strtok_r()' instead.",
+        "metadata": {
+          "cwe": [
+            "CWE-676: Use of Potentially Dangerous Function"
+          ],
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/STR06-C.+Do+not+assume+that+strtok%28%29+leaves+the+parse+string+unchanged",
+            "https://man7.org/linux/man-pages/man3/strtok.3.html#BUGS",
+            "https://stackoverflow.com/a/40335556"
+          ],
+          "category": "security",
+          "technology": [
+            "c"
+          ],
+          "confidence": "LOW",
+          "subcategory": [
+            "audit"
+          ],
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Dangerous Method or Function"
+          ],
+          "source": "https://semgrep.dev/r/c.lang.security.insecure-use-strtok-fn.insecure-use-strtok-fn",
+          "shortlink": "https://sg.run/LwqG",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "community",
+              "r_id": 8839,
+              "rule_id": "WAUo5v",
+              "rv_id": 1028278,
+              "url": "https://semgrep.dev/playground/r/qkTx1oq/c.lang.security.insecure-use-strtok-fn.insecure-use-strtok-fn",
+              "version_id": "qkTx1oq"
+            }
+          }
+        },
+        "severity": "WARNING",
+        "fingerprint": "dec09174899be6417950fd8b9b3ef23f21d51f092aa4cf459214219a883e70cec316469f03d45e793c07e0000391a55d7ff49be896597f6b825e4f943f5cd16b_1",
+        "lines": "    s = strtok(NULL,\",;\");",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1684,
+        "col": 11,
+        "offset": 42786
+      },
+      "end": {
+        "line": 1684,
+        "col": 12,
+        "offset": 42787
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1684,
+              "col": 11,
+              "offset": 42786
+            },
+            "end": {
+              "line": 1684,
+              "col": 12,
+              "offset": 42787
+            },
+            "abstract_content": "d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "f65c79da28be7e3cc487790fe6a594f3268ff3bf15dc4003000ad77cfc3efafb415cb0c2e6793826e63636f7b3edb4f9c91908f83bcc7d9fc3f8e0acbe666c5b_0",
+        "lines": "    if (!(d->flags & FL_TAG)) {",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1684,
+                  "col": 11,
+                  "offset": 42786
+                },
+                "end": {
+                  "line": 1684,
+                  "col": 12,
+                  "offset": 42787
+                }
+              },
+              "d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1686,
+        "col": 29,
+        "offset": 42906
+      },
+      "end": {
+        "line": 1686,
+        "col": 31,
+        "offset": 42908
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1686,
+              "col": 29,
+              "offset": 42906
+            },
+            "end": {
+              "line": 1686,
+              "col": 31,
+              "offset": 42908
+            },
+            "abstract_content": "d1"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "2ae684dec291facd4c176f79b7e066e3fde8b7c80077fe13fb7c3c513ce87f88db80678e0012a58be9a36ce98fda2d836a8010ae490de5d0e3154990236b723c_0",
+        "lines": "      for (d1 = d; d1; d1 = d1->next)",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            },
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1686,
+                  "col": 12,
+                  "offset": 42889
+                },
+                "end": {
+                  "line": 1686,
+                  "col": 14,
+                  "offset": 42891
+                }
+              },
+              "content": "d1"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1686,
+                  "col": 29,
+                  "offset": 42906
+                },
+                "end": {
+                  "line": 1686,
+                  "col": 31,
+                  "offset": 42908
+                }
+              },
+              "d1"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1687,
+        "col": 13,
+        "offset": 42928
+      },
+      "end": {
+        "line": 1687,
+        "col": 15,
+        "offset": 42930
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1687,
+              "col": 13,
+              "offset": 42928
+            },
+            "end": {
+              "line": 1687,
+              "col": 15,
+              "offset": 42930
+            },
+            "abstract_content": "d1"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "2ae684dec291facd4c176f79b7e066e3fde8b7c80077fe13fb7c3c513ce87f88db80678e0012a58be9a36ce98fda2d836a8010ae490de5d0e3154990236b723c_1",
+        "lines": "        if (d1->flags & FL_TAG) {",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            },
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1686,
+                  "col": 12,
+                  "offset": 42889
+                },
+                "end": {
+                  "line": 1686,
+                  "col": 14,
+                  "offset": 42891
+                }
+              },
+              "content": "d1"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1687,
+                  "col": 13,
+                  "offset": 42928
+                },
+                "end": {
+                  "line": 1687,
+                  "col": 15,
+                  "offset": 42930
+                }
+              },
+              "d1"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1700,
+        "col": 16,
+        "offset": 43312
+      },
+      "end": {
+        "line": 1700,
+        "col": 17,
+        "offset": 43313
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1700,
+              "col": 16,
+              "offset": 43312
+            },
+            "end": {
+              "line": 1700,
+              "col": 17,
+              "offset": 43313
+            },
+            "abstract_content": "d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "f65c79da28be7e3cc487790fe6a594f3268ff3bf15dc4003000ad77cfc3efafb415cb0c2e6793826e63636f7b3edb4f9c91908f83bcc7d9fc3f8e0acbe666c5b_1",
+        "lines": "    dial_entry(d);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1700,
+                  "col": 16,
+                  "offset": 43312
+                },
+                "end": {
+                  "line": 1700,
+                  "col": 17,
+                  "offset": 43313
+                }
+              },
+              "d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1743,
+        "col": 10,
+        "offset": 44261
+      },
+      "end": {
+        "line": 1743,
+        "col": 11,
+        "offset": 44262
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1743,
+              "col": 10,
+              "offset": 44261
+            },
+            "end": {
+              "line": 1743,
+              "col": 11,
+              "offset": 44262
+            },
+            "abstract_content": "d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "f65c79da28be7e3cc487790fe6a594f3268ff3bf15dc4003000ad77cfc3efafb415cb0c2e6793826e63636f7b3edb4f9c91908f83bcc7d9fc3f8e0acbe666c5b_2",
+        "lines": "    d2 = d->next;",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1743,
+                  "col": 10,
+                  "offset": 44261
+                },
+                "end": {
+                  "line": 1743,
+                  "col": 11,
+                  "offset": 44262
+                }
+              },
+              "d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1744,
+        "col": 5,
+        "offset": 44274
+      },
+      "end": {
+        "line": 1744,
+        "col": 6,
+        "offset": 44275
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1744,
+              "col": 5,
+              "offset": 44274
+            },
+            "end": {
+              "line": 1744,
+              "col": 6,
+              "offset": 44275
+            },
+            "abstract_content": "d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "f65c79da28be7e3cc487790fe6a594f3268ff3bf15dc4003000ad77cfc3efafb415cb0c2e6793826e63636f7b3edb4f9c91908f83bcc7d9fc3f8e0acbe666c5b_3",
+        "lines": "    d->next = d1;",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1744,
+                  "col": 5,
+                  "offset": 44274
+                },
+                "end": {
+                  "line": 1744,
+                  "col": 6,
+                  "offset": 44275
+                }
+              },
+              "d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1758,
+        "col": 11,
+        "offset": 44495
+      },
+      "end": {
+        "line": 1758,
+        "col": 12,
+        "offset": 44496
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1758,
+              "col": 11,
+              "offset": 44495
+            },
+            "end": {
+              "line": 1758,
+              "col": 12,
+              "offset": 44496
+            },
+            "abstract_content": "d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "f65c79da28be7e3cc487790fe6a594f3268ff3bf15dc4003000ad77cfc3efafb415cb0c2e6793826e63636f7b3edb4f9c91908f83bcc7d9fc3f8e0acbe666c5b_4",
+        "lines": "    dedit(d);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1758,
+                  "col": 11,
+                  "offset": 44495
+                },
+                "end": {
+                  "line": 1758,
+                  "col": 12,
+                  "offset": 44496
+                }
+              },
+              "d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1761,
+        "col": 32,
+        "offset": 44582
+      },
+      "end": {
+        "line": 1761,
+        "col": 33,
+        "offset": 44583
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1761,
+              "col": 32,
+              "offset": 44582
+            },
+            "end": {
+              "line": 1761,
+              "col": 33,
+              "offset": 44583
+            },
+            "abstract_content": "d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "f65c79da28be7e3cc487790fe6a594f3268ff3bf15dc4003000ad77cfc3efafb415cb0c2e6793826e63636f7b3edb4f9c91908f83bcc7d9fc3f8e0acbe666c5b_5",
+        "lines": "    mc_wprintf(w, fmt, cur+1, (d->flags & FL_TAG) ? 16 : ' ', d->name,",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1761,
+                  "col": 32,
+                  "offset": 44582
+                },
+                "end": {
+                  "line": 1761,
+                  "col": 33,
+                  "offset": 44583
+                }
+              },
+              "d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1761,
+        "col": 63,
+        "offset": 44613
+      },
+      "end": {
+        "line": 1761,
+        "col": 64,
+        "offset": 44614
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1761,
+              "col": 63,
+              "offset": 44613
+            },
+            "end": {
+              "line": 1761,
+              "col": 64,
+              "offset": 44614
+            },
+            "abstract_content": "d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "f65c79da28be7e3cc487790fe6a594f3268ff3bf15dc4003000ad77cfc3efafb415cb0c2e6793826e63636f7b3edb4f9c91908f83bcc7d9fc3f8e0acbe666c5b_6",
+        "lines": "    mc_wprintf(w, fmt, cur+1, (d->flags & FL_TAG) ? 16 : ' ', d->name,",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1761,
+                  "col": 63,
+                  "offset": 44613
+                },
+                "end": {
+                  "line": 1761,
+                  "col": 64,
+                  "offset": 44614
+                }
+              },
+              "d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1762,
+        "col": 13,
+        "offset": 44634
+      },
+      "end": {
+        "line": 1762,
+        "col": 14,
+        "offset": 44635
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1762,
+              "col": 13,
+              "offset": 44634
+            },
+            "end": {
+              "line": 1762,
+              "col": 14,
+              "offset": 44635
+            },
+            "abstract_content": "d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "f65c79da28be7e3cc487790fe6a594f3268ff3bf15dc4003000ad77cfc3efafb415cb0c2e6793826e63636f7b3edb4f9c91908f83bcc7d9fc3f8e0acbe666c5b_7",
+        "lines": "            d->number, d->lastdate, d->lasttime, d->count, d->script);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1762,
+                  "col": 13,
+                  "offset": 44634
+                },
+                "end": {
+                  "line": 1762,
+                  "col": 14,
+                  "offset": 44635
+                }
+              },
+              "d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1762,
+        "col": 24,
+        "offset": 44645
+      },
+      "end": {
+        "line": 1762,
+        "col": 25,
+        "offset": 44646
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1762,
+              "col": 24,
+              "offset": 44645
+            },
+            "end": {
+              "line": 1762,
+              "col": 25,
+              "offset": 44646
+            },
+            "abstract_content": "d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "f65c79da28be7e3cc487790fe6a594f3268ff3bf15dc4003000ad77cfc3efafb415cb0c2e6793826e63636f7b3edb4f9c91908f83bcc7d9fc3f8e0acbe666c5b_8",
+        "lines": "            d->number, d->lastdate, d->lasttime, d->count, d->script);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1762,
+                  "col": 24,
+                  "offset": 44645
+                },
+                "end": {
+                  "line": 1762,
+                  "col": 25,
+                  "offset": 44646
+                }
+              },
+              "d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1762,
+        "col": 37,
+        "offset": 44658
+      },
+      "end": {
+        "line": 1762,
+        "col": 38,
+        "offset": 44659
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1762,
+              "col": 37,
+              "offset": 44658
+            },
+            "end": {
+              "line": 1762,
+              "col": 38,
+              "offset": 44659
+            },
+            "abstract_content": "d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "f65c79da28be7e3cc487790fe6a594f3268ff3bf15dc4003000ad77cfc3efafb415cb0c2e6793826e63636f7b3edb4f9c91908f83bcc7d9fc3f8e0acbe666c5b_9",
+        "lines": "            d->number, d->lastdate, d->lasttime, d->count, d->script);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1762,
+                  "col": 37,
+                  "offset": 44658
+                },
+                "end": {
+                  "line": 1762,
+                  "col": 38,
+                  "offset": 44659
+                }
+              },
+              "d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1762,
+        "col": 50,
+        "offset": 44671
+      },
+      "end": {
+        "line": 1762,
+        "col": 51,
+        "offset": 44672
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1762,
+              "col": 50,
+              "offset": 44671
+            },
+            "end": {
+              "line": 1762,
+              "col": 51,
+              "offset": 44672
+            },
+            "abstract_content": "d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "f65c79da28be7e3cc487790fe6a594f3268ff3bf15dc4003000ad77cfc3efafb415cb0c2e6793826e63636f7b3edb4f9c91908f83bcc7d9fc3f8e0acbe666c5b_10",
+        "lines": "            d->number, d->lastdate, d->lasttime, d->count, d->script);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1762,
+                  "col": 50,
+                  "offset": 44671
+                },
+                "end": {
+                  "line": 1762,
+                  "col": 51,
+                  "offset": 44672
+                }
+              },
+              "d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1762,
+        "col": 60,
+        "offset": 44681
+      },
+      "end": {
+        "line": 1762,
+        "col": 61,
+        "offset": 44682
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1762,
+              "col": 60,
+              "offset": 44681
+            },
+            "end": {
+              "line": 1762,
+              "col": 61,
+              "offset": 44682
+            },
+            "abstract_content": "d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "f65c79da28be7e3cc487790fe6a594f3268ff3bf15dc4003000ad77cfc3efafb415cb0c2e6793826e63636f7b3edb4f9c91908f83bcc7d9fc3f8e0acbe666c5b_11",
+        "lines": "            d->number, d->lastdate, d->lasttime, d->count, d->script);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1762,
+                  "col": 60,
+                  "offset": 44681
+                },
+                "end": {
+                  "line": 1762,
+                  "col": 61,
+                  "offset": 44682
+                }
+              },
+              "d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.memory.deallocation.double-free.double-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1769,
+        "col": 12,
+        "offset": 44845
+      },
+      "end": {
+        "line": 1769,
+        "col": 21,
+        "offset": 44854
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$SINK_VAR": {
+            "start": {
+              "line": 1769,
+              "col": 12,
+              "offset": 44845
+            },
+            "end": {
+              "line": 1769,
+              "col": 21,
+              "offset": 44854
+            },
+            "abstract_content": "(char*d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "`(char *)d` has previously been freed which will trigger a double-free vulnerability. This may lead to memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "L1",
+            "MEM30-C",
+            "MEM50-CPP"
+          ],
+          "cwe": [
+            "CWE-415: Double Free"
+          ],
+          "display-name": "Double Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/MEM50-CPP.+Do+not+access+freed+memory"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.double-free.double-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.memory.deallocation.double-free.double-free",
+          "shortlink": "https://sg.run/kxpPK",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114772,
+              "rule_id": "EwUjoNY",
+              "rv_id": 1413954,
+              "url": "https://semgrep.dev/playground/r/l4TpAZJ/cpp.lang.security.memory.deallocation.double-free.double-free",
+              "version_id": "l4TpAZJ"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "5e9d1fa910fce1d05677aa8538097c1fe9e2ffc276f0de6425d538ccaf0f36522724eb945d471815d3331207df514513440521927de2bdd57b745bd682296766_0",
+        "lines": "      free((char *)d);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1769,
+                  "col": 12,
+                  "offset": 44845
+                },
+                "end": {
+                  "line": 1769,
+                  "col": 21,
+                  "offset": 44854
+                }
+              },
+              "(char *)d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1775,
+        "col": 18,
+        "offset": 44975
+      },
+      "end": {
+        "line": 1775,
+        "col": 19,
+        "offset": 44976
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1775,
+              "col": 18,
+              "offset": 44975
+            },
+            "end": {
+              "line": 1775,
+              "col": 19,
+              "offset": 44976
+            },
+            "abstract_content": "d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "f65c79da28be7e3cc487790fe6a594f3268ff3bf15dc4003000ad77cfc3efafb415cb0c2e6793826e63636f7b3edb4f9c91908f83bcc7d9fc3f8e0acbe666c5b_12",
+        "lines": "      dialents = d->next;",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1775,
+                  "col": 18,
+                  "offset": 44975
+                },
+                "end": {
+                  "line": 1775,
+                  "col": 19,
+                  "offset": 44976
+                }
+              },
+              "d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1777,
+        "col": 30,
+        "offset": 45022
+      },
+      "end": {
+        "line": 1777,
+        "col": 31,
+        "offset": 45023
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1777,
+              "col": 30,
+              "offset": 45022
+            },
+            "end": {
+              "line": 1777,
+              "col": 31,
+              "offset": 45023
+            },
+            "abstract_content": "d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "f65c79da28be7e3cc487790fe6a594f3268ff3bf15dc4003000ad77cfc3efafb415cb0c2e6793826e63636f7b3edb4f9c91908f83bcc7d9fc3f8e0acbe666c5b_13",
+        "lines": "      getno(cur - 1)->next = d->next;",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1777,
+                  "col": 30,
+                  "offset": 45022
+                },
+                "end": {
+                  "line": 1777,
+                  "col": 31,
+                  "offset": 45023
+                }
+              },
+              "d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.memory.deallocation.double-free.double-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1778,
+        "col": 10,
+        "offset": 45040
+      },
+      "end": {
+        "line": 1778,
+        "col": 19,
+        "offset": 45049
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$SINK_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 10,
+              "offset": 45040
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "(char*d"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "`(char *)d` has previously been freed which will trigger a double-free vulnerability. This may lead to memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "L1",
+            "MEM30-C",
+            "MEM50-CPP"
+          ],
+          "cwe": [
+            "CWE-415: Double Free"
+          ],
+          "display-name": "Double Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/MEM50-CPP.+Do+not+access+freed+memory"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.double-free.double-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.memory.deallocation.double-free.double-free",
+          "shortlink": "https://sg.run/kxpPK",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114772,
+              "rule_id": "EwUjoNY",
+              "rv_id": 1413954,
+              "url": "https://semgrep.dev/playground/r/l4TpAZJ/cpp.lang.security.memory.deallocation.double-free.double-free",
+              "version_id": "l4TpAZJ"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "5e9d1fa910fce1d05677aa8538097c1fe9e2ffc276f0de6425d538ccaf0f36522724eb945d471815d3331207df514513440521927de2bdd57b745bd682296766_1",
+        "lines": "    free((char *)d);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 10,
+                  "offset": 45040
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "(char *)d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+      "path": "minicom-2.10/src/dial.c",
+      "start": {
+        "line": 1800,
+        "col": 26,
+        "offset": 45578
+      },
+      "end": {
+        "line": 1800,
+        "col": 27,
+        "offset": 45579
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 1492,
+              "col": 1,
+              "offset": 38108
+            },
+            "end": {
+              "line": 1492,
+              "col": 5,
+              "offset": 38112
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 1492,
+              "col": 6,
+              "offset": 38113
+            },
+            "end": {
+              "line": 1492,
+              "col": 13,
+              "offset": 38120
+            },
+            "abstract_content": "dialdir"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 1495,
+              "col": 3,
+              "offset": 38141
+            },
+            "end": {
+              "line": 1495,
+              "col": 19,
+              "offset": 38157
+            },
+            "abstract_content": "struct dialent*"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 1778,
+              "col": 18,
+              "offset": 45048
+            },
+            "end": {
+              "line": 1778,
+              "col": 19,
+              "offset": 45049
+            },
+            "abstract_content": "d"
+          },
+          "$VAR": {
+            "start": {
+              "line": 1800,
+              "col": 26,
+              "offset": 45578
+            },
+            "end": {
+              "line": 1800,
+              "col": 27,
+              "offset": 45579
+            },
+            "abstract_content": "d"
+          }
+        },
+        "message": "This expression points to memory that has been freed. This can lead to a segmentation fault or memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "EXP54-CPP",
+            "L1",
+            "L2",
+            "MEM30-C"
+          ],
+          "cwe": [
+            "CWE-416: Use After Free"
+          ],
+          "cwe2020-top25": true,
+          "cwe2021-top25": true,
+          "cwe2022-top25": true,
+          "display-name": "Use After Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/EXP54-CPP.+Do+not+access+an+object+outside+of+its+lifetime"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.function-use-after-free.function-use-after-free",
+            "c.lang.security.use-after-free.use-after-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+          "shortlink": "https://sg.run/0oAAB",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114898,
+              "rule_id": "pKU1nn0",
+              "rv_id": 1414080,
+              "url": "https://semgrep.dev/playground/r/7ZTKjPW/cpp.lang.security.use-after-free.local-variable-malloc-free.local-variable-malloc-free",
+              "version_id": "7ZTKjPW"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "f65c79da28be7e3cc487790fe6a594f3268ff3bf15dc4003000ad77cfc3efafb415cb0c2e6793826e63636f7b3edb4f9c91908f83bcc7d9fc3f8e0acbe666c5b_14",
+        "lines": "    cur = move_entry (w, d, cur, &top);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "d"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1778,
+                  "col": 18,
+                  "offset": 45048
+                },
+                "end": {
+                  "line": 1778,
+                  "col": 19,
+                  "offset": 45049
+                }
+              },
+              "content": "d"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/dial.c",
+                "start": {
+                  "line": 1800,
+                  "col": 26,
+                  "offset": 45578
+                },
+                "end": {
+                  "line": 1800,
+                  "col": 27,
+                  "offset": 45579
+                }
+              },
+              "d"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    },
+    {
+      "check_id": "cpp.lang.security.memory.deallocation.double-free.double-free",
+      "path": "minicom-2.10/src/updown.c",
+      "start": {
+        "line": 354,
+        "col": 10,
+        "offset": 8112
+      },
+      "end": {
+        "line": 354,
+        "col": 17,
+        "offset": 8119
+      },
+      "extra": {
+        "metavars": {
+          "$RETURN_TYPE": {
+            "start": {
+              "line": 215,
+              "col": 1,
+              "offset": 4734
+            },
+            "end": {
+              "line": 215,
+              "col": 5,
+              "offset": 4738
+            },
+            "abstract_content": "void"
+          },
+          "$FUNC": {
+            "start": {
+              "line": 215,
+              "col": 6,
+              "offset": 4739
+            },
+            "end": {
+              "line": 215,
+              "col": 12,
+              "offset": 4745
+            },
+            "abstract_content": "updown"
+          },
+          "$LOCAL_VAR_TYPE": {
+            "start": {
+              "line": 233,
+              "col": 3,
+              "offset": 5109
+            },
+            "end": {
+              "line": 233,
+              "col": 9,
+              "offset": 5115
+            },
+            "abstract_content": "char*"
+          },
+          "$LOCAL_VAR": {
+            "start": {
+              "line": 347,
+              "col": 14,
+              "offset": 8019
+            },
+            "end": {
+              "line": 347,
+              "col": 21,
+              "offset": 8026
+            },
+            "abstract_content": "cmdline"
+          },
+          "$SINK_VAR": {
+            "start": {
+              "line": 354,
+              "col": 10,
+              "offset": 8112
+            },
+            "end": {
+              "line": 354,
+              "col": 17,
+              "offset": 8119
+            },
+            "abstract_content": "cmdline"
+          }
+        },
+        "message": "`cmdline` has previously been freed which will trigger a double-free vulnerability. This may lead to memory corruption.",
+        "metadata": {
+          "likelihood": "LOW",
+          "impact": "HIGH",
+          "confidence": "MEDIUM",
+          "category": "security",
+          "subcategory": [
+            "vuln"
+          ],
+          "cert": [
+            "C",
+            "C++",
+            "L1",
+            "MEM30-C",
+            "MEM50-CPP"
+          ],
+          "cwe": [
+            "CWE-415: Double Free"
+          ],
+          "display-name": "Double Free",
+          "references": [
+            "https://wiki.sei.cmu.edu/confluence/display/c/MEM30-C.+Do+not+access+freed+memory",
+            "https://wiki.sei.cmu.edu/confluence/display/cplusplus/MEM50-CPP.+Do+not+access+freed+memory"
+          ],
+          "release": "ga",
+          "supersedes": [
+            "c.lang.security.double-free.double-free"
+          ],
+          "technology": [
+            "cpp"
+          ],
+          "license": "Semgrep Rules License v1.0. For more details, visit semgrep.dev/legal/rules-license",
+          "vulnerability_class": [
+            "Memory Issues"
+          ],
+          "source": "https://semgrep.dev/r/cpp.lang.security.memory.deallocation.double-free.double-free",
+          "shortlink": "https://sg.run/kxpPK",
+          "semgrep.dev": {
+            "rule": {
+              "origin": "pro_rules",
+              "r_id": 114772,
+              "rule_id": "EwUjoNY",
+              "rv_id": 1413954,
+              "url": "https://semgrep.dev/playground/r/l4TpAZJ/cpp.lang.security.memory.deallocation.double-free.double-free",
+              "version_id": "l4TpAZJ"
+            }
+          }
+        },
+        "severity": "ERROR",
+        "fingerprint": "88fd2f31ac66c8d88b2b0949849f5480c15277c2ff35c744e86bc6a85188f62d71c429d915bcb594320bd459d7eb8eec8b62ac298a6431e2405b43f8c0e7a549_0",
+        "lines": "    free(cmdline);",
+        "is_ignored": false,
+        "validation_state": "NO_VALIDATOR",
+        "dataflow_trace": {
+          "taint_source": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/updown.c",
+                "start": {
+                  "line": 347,
+                  "col": 14,
+                  "offset": 8019
+                },
+                "end": {
+                  "line": 347,
+                  "col": 21,
+                  "offset": 8026
+                }
+              },
+              "cmdline"
+            ]
+          ],
+          "intermediate_vars": [
+            {
+              "location": {
+                "path": "minicom-2.10/src/updown.c",
+                "start": {
+                  "line": 347,
+                  "col": 14,
+                  "offset": 8019
+                },
+                "end": {
+                  "line": 347,
+                  "col": 21,
+                  "offset": 8026
+                }
+              },
+              "content": "cmdline"
+            }
+          ],
+          "taint_sink": [
+            "CliLoc",
+            [
+              {
+                "path": "minicom-2.10/src/updown.c",
+                "start": {
+                  "line": 354,
+                  "col": 10,
+                  "offset": 8112
+                },
+                "end": {
+                  "line": 354,
+                  "col": 17,
+                  "offset": 8119
+                }
+              },
+              "cmdline"
+            ]
+          ]
+        },
+        "engine_kind": "OSS"
+      }
+    }
+  ],
+  "errors": [],
+  "paths": {
+    "scanned": [
+      "minicom-2.10/src/config.c",
+      "minicom-2.10/src/dial.c",
+      "minicom-2.10/src/updown.c"
+    ]
+  },
+  "time": {
+    "rules": [],
+    "rules_parse_time": 1.538722038269043,
+    "profiling_times": {
+      "config_time": 5.3852434158325195,
+      "core_time": 7.137829542160034,
+      "ignores_time": 0.1531364917755127,
+      "total_time": 12.6806960105896
+    },
+    "parsing_time": {
+      "total_time": 0,
+      "per_file_time": {
+        "mean": 0,
+        "std_dev": 0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0,
+        "count_ratio": 0
+      },
+      "very_slow_files": []
+    },
+    "scanning_time": {
+      "total_time": 10.139169931411743,
+      "per_file_time": {
+        "mean": 1.1265744368235273,
+        "std_dev": 3.2280070011294506
+      },
+      "very_slow_stats": {
+        "time_ratio": 0.9941966659534687,
+        "count_ratio": 0.3333333333333333
+      },
+      "very_slow_files": [
+        {
+          "fpath": "minicom-2.10/src/updown.c",
+          "ftime": 1.5707979202270508
+        },
+        {
+          "fpath": "minicom-2.10/src/dial.c",
+          "ftime": 3.3059871196746826
+        },
+        {
+          "fpath": "minicom-2.10/src/config.c",
+          "ftime": 5.2035439014434814
+        }
+      ]
+    },
+    "matching_time": {
+      "total_time": 0,
+      "per_file_and_rule_time": {
+        "mean": 0,
+        "std_dev": 0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0,
+        "count_ratio": 0
+      },
+      "very_slow_rules_on_files": []
+    },
+    "tainting_time": {
+      "total_time": 0,
+      "per_def_and_rule_time": {
+        "mean": 0,
+        "std_dev": 0
+      },
+      "very_slow_stats": {
+        "time_ratio": 0,
+        "count_ratio": 0
+      },
+      "very_slow_rules_on_defs": []
+    },
+    "fixpoint_timeouts": [
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at minicom-2.10/src/dial.c:1315:4 [rules: 1, first: cpp.lang.security.memory.allocation.tainted-allocation-size.tainted-allocation-size]",
+        "location": {
+          "path": "minicom-2.10/src/dial.c",
+          "start": {
+            "line": 1315,
+            "col": 5,
+            "offset": 33784
+          },
+          "end": {
+            "line": 1315,
+            "col": 15,
+            "offset": 33794
+          }
+        }
+      },
+      {
+        "error_type": "Fixpoint timeout",
+        "severity": "warn",
+        "message": "Fixpoint timeout while performing taint analysis at minicom-2.10/src/dial.c:1492:5 [rules: 1, first: cpp.lang.security.memory.allocation.tainted-allocation-size.tainted-allocation-size]",
+        "location": {
+          "path": "minicom-2.10/src/dial.c",
+          "start": {
+            "line": 1492,
+            "col": 6,
+            "offset": 38113
+          },
+          "end": {
+            "line": 1492,
+            "col": 13,
+            "offset": 38120
+          }
+        }
+      }
+    ],
+    "prefiltering": {
+      "project_level_time": 0,
+      "file_level_time": 0,
+      "rules_with_project_prefilters_ratio": 0,
+      "rules_with_file_prefilters_ratio": 0.8543689320388349,
+      "rules_selected_ratio": 0.3268608414239482,
+      "rules_matched_ratio": 0.3268608414239482
+    },
+    "targets": [],
+    "total_bytes": 0,
+    "max_memory_bytes": 4234203968
+  },
+  "engine_requested": "OSS",
+  "interfile_languages_used": [],
+  "skipped_rules": [],
+  "profiling_results": []
+}
